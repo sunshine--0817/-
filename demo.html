@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="css/demo.css">
+	<!-- 必要样式 -->
+	<link type="text/css" rel="stylesheet" href="css/etalage.css">
+</head>
+<body id="by" style="overflow-y: hidden" >
+<div id="switcher">
+  <div class="center">
+
+	<ul id="etalage">
+			<li>
+				<img class="etalage_thumb_image" src="images/image1_thumb.jpg" />
+				<img class="etalage_source_image" src="images/image1_large.jpg" title="This is an optional description." />
+			</li>
+			<li>
+				<img class="etalage_thumb_image" src="images/image2_thumb.jpg" />
+				<img class="etalage_source_image" src="images/image2_large.jpg" title="This text area can also be setup to appear at the top of the image.<br>This second line shows that the description can be longer." />
+			</li>
+			<li>
+				<img class="etalage_thumb_image" src="images/image3_thumb.jpg" />
+				<img class="etalage_source_image" src="images/image3_large.jpg" />
+			</li>
+			<li>
+				<img class="etalage_thumb_image" src="images/image4_thumb.jpg" />
+				<img class="etalage_source_image" src="images/image4_large.jpg" />
+			</li>
+		</ul>		
+	</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.etalage.min.js"></script>
+
+		<script type="text/javascript">
+		$(document).ready(function($){
+
+			$('#etalage').etalage({
+				thumb_image_width: 300,
+				thumb_image_height: 400,
+				source_image_width: 900,
+				source_image_height: 1200,
+				show_hint: true,
+				click_callback: function(image_anchor, instance_id){
+					alert('回调函数:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+				}
+			});
+
+		});
+		</script>
+</body>
+</html>
